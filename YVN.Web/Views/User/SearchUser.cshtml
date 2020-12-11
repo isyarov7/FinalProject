@@ -1,0 +1,45 @@
+﻿@model YVN.Web.Models.SearchViewModel
+
+@{
+    ViewData["Title"] = "Search Users";
+}
+
+<h3 class="text-center">@ViewData["Title"]</h3>
+
+<div class="row">
+    <br />
+    <div class="col-sm-6 col-sm-offset-3">
+        @if (Model.Username != null)
+            {
+                <div class="well">
+                    <div class="row">
+                        <div class="col-sm-6 text-left">
+                            <div class="row">
+                                Username: @Model.Username
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-left">
+                            <div class="row">
+                                FirstName: @Model.FirstName
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-left">
+                            <div class="row">
+                                LastName: @Model.LastName
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        }
+        else
+        {
+            <div class="well">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h2>There are no user corresponding to your search!</h2>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

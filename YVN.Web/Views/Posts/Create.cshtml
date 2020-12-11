@@ -1,0 +1,47 @@
+﻿@model YVN.Web.Models.PostViewModel.CreatePostViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Create Post";
+}
+<h2 class="text-center">@ViewData["Title"]</h2>
+<div class="row">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Write your thoughts here!</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        @*<div class="form-group">
+            <label asp-for="Content" class="control-label"></label>
+            <input asp-for="Content" class="form-control" />
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>*@
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="button">Add photo</button>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile03">
+                <label class="custom-file-label" for="inputGroupFile03">Choose photo</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Visability" class="control-label">Choose who can see this post</label>
+            <select name="Visability">
+                @foreach (var item in Model.VisabilityValues)
+                {
+                    <option value="@item">@item</option>
+                }
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

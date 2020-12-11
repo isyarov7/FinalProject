@@ -1,0 +1,83 @@
+﻿@using  YVN.Web.Models.HomeViewModels
+@model YVN.Web.Models.HomeViewModels.IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div> 
+    <form asp-action="SearchUser" asp-controller="User">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <input type="text" placeholder="Search.." name="username" id="username">
+        </div>
+        
+        <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+<div class="PublicPosts">
+    <h1 class="display-4">Newest Posts</h1>
+</div>
+
+@if (Model.PublicPosts.Count() == 0)
+{
+    <p class="text-muted">No posts found. Try  create one or come again later!</p>
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default text-left">
+                <div class="panel-body">
+                    <p contenteditable="true">What do you think @(User.Identity.Name)?</p>
+                    <a class="btn btn-default btn-sm" asp-area="" asp-controller="Posts" asp-action="Create">Create Post</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @foreach (var post in Model.PublicPosts)
+    {
+        <hr />
+        <h4>@post.User.FirstName @post.User.LastName</h4>
+        <br />
+        <div class="media">
+            @*<img src="@post.Photo" class="img-fluid" alt="">*@
+            <div class="media-body">
+                <h6 class="text-muted"> @post.Content</h6>
+            </div>
+        </div>
+        <hr />
+    }
+}
+
+
+
+@*<partial name="_CurrentYearPartial" />
+    <div class="jumbotron text-center">
+
+        <h1 class="display-4">Welcome</h1>
+        <h2 greeting-string="Hello"> </h2>
+
+    </div>
+
+    @section Lincs
+    {
+        <li class="nav-item">
+            <a class="nav-link text-center text-dark" href="https://gogle.com">
+                Google @DateTime.UtcNow.Year
+            </a>
+        </li>
+    }
+    <form asp-action="Index">
+    </form>
+
+
+
+    @section Scripts{
+        <script>alert("HELLO")</script>
+    }*@

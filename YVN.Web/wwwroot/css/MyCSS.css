@@ -1,0 +1,98 @@
+﻿body {
+    height: 100%;
+/*    background-size:auto;*/
+    background-image: url("../Images/music-1262234_1280.png");
+    background-repeat: no-repeat;
+   background-size: cover;
+    background-position: center;
+}
+
+/* navbar */
+nav.navbar {
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+    nav.navbar a, nav.navbar ul li a {
+        color: black !important;
+        font-size: 18px;
+    }
+
+    nav.navbar ul li {
+        padding: 0 15px;
+    }
+
+dropdown-menu-content {
+    display: none;
+    position: absolute;
+    background: none;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+dropdown:focus {
+    border: none;
+}
+
+/*PublicPosts*/
+.PublicPosts {
+    margin-top: 10%;
+    background-color: rrgba(191, 191, 191, 1)
+}
+
+
+/*Create Post*/
+
+.nav.Create {
+    height: 100%;
+    /*    background-size:auto;*/
+    background-image: url("../Images/pencil-drawings-5084470_1920.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*Show name when hoover the profile picture*/
+*avatar {
+    box-sizing: border-box
+}
+
+/* Container needed to position the overlay. Adjust the width as needed */
+avatar.container {
+    position: relative;
+    width: 50%;
+    max-width: 300px;
+}
+
+/* Make the image to responsive */
+avatar.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+avatar.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+avatar.container:hover .overlay {
+    opacity: 1;
+}
