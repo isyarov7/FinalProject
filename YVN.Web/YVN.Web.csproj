@@ -39,8 +39,4 @@
 	  <Folder Include="Models\UserViewModel\" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <None Include="..\.editorconfig" Link=".editorconfig" />
-	</ItemGroup>
-
 </Project>
